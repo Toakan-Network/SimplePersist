@@ -1,6 +1,12 @@
 class spp {
     tag = "spp";
 
+    class Medical {
+        file = "sp_player\functions\medical";
+        class medicalCheck {};
+        class ACEMedCompat {};
+    };
+
     class EventHandlers {
         file = "sp_player\functions\eh";
         class missionEH {};

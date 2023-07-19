@@ -52,12 +52,9 @@ waituntil {
 			sleep 10; 
 			alive _player;
 		};
-[3, format ["Restoring HP for %1", name _player]] call spp_fnc_log;
-for "_i" from 0 to ((count (_pDMG select 0)) -1) do {
-	private _a = _pDMG select 0 select _i;
-	private _b = _pDMG select 2 select _i;
-	[_player, [_a, _b]] remoteexec ["setHitPointDamage", _MID];
-};
+
+[_pDMG, _player, _MID] call spp_fnc_medicalCheck;
+
 [3, format ["Restoring position for %1", name _player]] call spp_fnc_log;
 _player setPos _PPos;
 [3, format ["Restoring loadout for %1", name _player]] call spp_fnc_log;
