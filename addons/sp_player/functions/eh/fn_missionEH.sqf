@@ -1,0 +1,13 @@
+//when a player connects
+addMissionEventHandler ["PlayerConnected", {
+	params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+	[2, format ["Player %1 Connected, restoring data", _name]] call tcz_fnc_log;
+	[_uid, _name, _owner] call tcz_fnc_pConnected;
+}];
+
+// When a Player DCs
+addMissionEventHandler ["HandleDisconnect", {
+	params ["_unit", "_id", "_uid", "_name"];
+	[2, format ["Player %1 Disconnected, saving data", _name]] call tcz_fnc_log;
+	[_unit, _uid] call tcz_fnc_pDConnected;
+}];
