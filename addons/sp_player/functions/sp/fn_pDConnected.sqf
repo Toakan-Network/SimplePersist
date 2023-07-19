@@ -35,14 +35,14 @@ IF (count _spinfo == 0) then {
 	
 	{	// Cleanup Duplicates.
 		if (_pID == _x select 0) then {
-			[2, format ["Duplicate entry found for %1, removing.", _pID]] call tcz_fnc_log;
+			[2, format ["Duplicate entry found for %1, removing.", _pID]] call spp_fnc_log;
 			_SPInfo deleteat _foreachindex;
 		};
 	} foreach _SPInfo;
 };
 
 if !(isNull _player) then {	
-	[2, format ["Gathering %1 Info.", _pName]] call tcz_fnc_log;
+	[2, format ["Gathering %1 Info.", _pName]] call spp_fnc_log;
 	_pDMG = getAllHitPointsDamage _player;
 	_PLoad = getUnitLoadout _player;
 	_PPos = getpos _player;

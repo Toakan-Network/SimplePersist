@@ -10,6 +10,7 @@ Currently it will store Player information on Disconnect and restore it on Conne
 There is more to be added in future, such as:
 - Vehicles
 - Scenic Objects
+
 However they are currently on-hold pending some more time for development.
 
 This mod was developed for use by 3PARA, a Community MILSIM which aims to provide realistic operations on a weekly basis. If you are interested in joining, please feel free to jump in! 

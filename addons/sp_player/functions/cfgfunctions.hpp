@@ -1,5 +1,5 @@
-class tcz {
-    tag = "tcz";
+class spp {
+    tag = "spp";
 
     class EventHandlers {
         file = "sp_player\functions\eh";
@@ -20,8 +20,10 @@ class tcz {
 
     class SimplePersist {
         file = "sp_player\functions\sp";
+        class getPlayerObj {};
         class namespaceCheck {};
         class pConnected {};
         class pDConnected {};
+        class setDefaults {};
     };
 };
