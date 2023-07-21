@@ -14,7 +14,7 @@
 private _errLevel = '';
 private _errMsg = '';
 private _errFile = '';
-private _logLevel = missionNamespace getvariable ["LogLevel", 2];
+private _logLevel = missionNamespace getvariable ["SPLogLevel", 2];
 
 if(_this isEqualType []) then
 {
