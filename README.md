@@ -30,12 +30,11 @@ However they are currently on-hold pending some more time for development.
 
 ## Developer's Notes
 This mod was developed for use by 3PARA, a Community MILSIM which aims to provide realistic operations on a weekly basis. If you are interested in joining, please feel free to jump in!
-- 3PARA Discord[discord.gg]
-- Github Link[github.com]
+- [3PARA Discord](discord.gg)
 
-Please take note, this is not intended to replace ALIVE, RCO Persist or anything else, those mods are more fully featured than this. The aim of this is to provide a simple Player persistence experience.
-
-
+## Futher links
+- [Github](https://github.com/Toakan-Network/SimplePersist)
+- [Wiki](https://github.com/Toakan-Network/SimplePersist/wiki/Usage)
 ---
 ### Disclaimer: Please note, this is not intended to replace ALIVE, RCO Persist or anything else, those mods are more fully featured than this. The aim of this is to provide a simple Player persistence experience.
 ---
