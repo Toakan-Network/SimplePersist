@@ -12,7 +12,7 @@ class spp {
         class missionEH {};
     };
 
-    class init {
+    class sp_playerinit {
         file = "sp_player\functions\init";
         class startSPP {
                 postInit = 1;
