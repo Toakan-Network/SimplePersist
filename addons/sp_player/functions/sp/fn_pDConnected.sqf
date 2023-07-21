@@ -1,16 +1,15 @@
 // playerDisconnect.sqf
 if !(isServer) exitwith {};
-_player = _this select 0;
-_pID = _this select 1;
-_pName = name _player;
-_MID = owner _player;
+private _scriptname = "spp_fnc_pDConnected";
+private _player = _this select 0;
+private _pID = _this select 1;
+private _pName = name _player;
 if (_pname == "__SERVER__") exitwith {};
 
 // Get Current Profile information
 private _SPInfo = profileNameSpace getVariable ["playerInformation", []]; 
 // [ [123,[loadout],[pos]], [124,[loadout],[pos]] ]
 private _SPlayer = [];
-private _SPID = 0;
 private _PLoad = [];
 private _PPos = [0,0,0];
 private _pDMG = [];
@@ -54,3 +53,4 @@ if !(isNull _player) then {
 
 _SPInfo pushback _SPlayer;
 [_spinfo] call spp_fnc_updateNamespace;
+[2, format["Player Disconnect Completed"]] call spp_fnc_log;

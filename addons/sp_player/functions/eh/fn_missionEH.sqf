@@ -1,4 +1,5 @@
 //when a player connects
+[2, format ["Adding Event handlers"]] call spp_fnc_log;
 addMissionEventHandler ["PlayerConnected", {
 	params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
 	[_uid, _name, _owner] spawn {
