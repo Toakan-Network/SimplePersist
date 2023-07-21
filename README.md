@@ -1,21 +1,45 @@
-## Simple Persist is a server side mod, which requires no additional setup past enabling. 
+## Simple Persist is a server side mod, which requires no additional setup past enabling.
 
-SP will retain Player information in the ProfileNamespace. This means you will need to setup a new profile for each mission you play, otherwise you will end up restoring save data from one map onto a different one. (You can end up in the ocean).
+Fully backwards compatible, it does not care what other mods you are using, what you may remove ect during your playtime.
 
-Currently it will store Player information on Disconnect and restore it on Connection:
-- Loadout
-- Health
+## Features
+Currently it will store Player information on Disconnect (Manual abort, crash or Desync) and restore it on Connection:
+- Loadout (Vanilla or Modded, supports all armoury loadouts)
+- Health (Vanilla or ACE Medical)
 - Position
 
+#### SimplePersist not require additional mods, external databases, websites ect.
+It doesn't even need CBA_A3 or ACE!
+
+#### Simple Persist is entirely self-contained.
+SP retains Player information in the ProfileNamespace. No fancy tricks or back end needed, this means at most you will need to create a new profile when creating a server (or deleting the old profile.vars) in order to make use of this mod.
+
+> Originally posted by Tad:
+> I am not responsible if you end up in the ocean.
+
+
+## Future Plans
 There is more to be added in future, such as:
 - Vehicles
 - Scenic Objects
+- Mod compatibilities, IE ACRE channel restore
+- Anything else that may come up.
 
 However they are currently on-hold pending some more time for development.
 
-This mod was developed for use by 3PARA, a Community MILSIM which aims to provide realistic operations on a weekly basis. If you are interested in joining, please feel free to jump in! 
-- 3PARA [url=https://discord.gg/F5xZtGya7a]Discord[/url]
 
-### Please take note, this is not intended to replace ALIVE, RCO Persist or anything else, those mods are more fully featured than this. The aim of this is to provide a simple Player persistence experience.
+## Developer's Notes
+This mod was developed for use by 3PARA, a Community MILSIM which aims to provide realistic operations on a weekly basis. If you are interested in joining, please feel free to jump in!
+- 3PARA Discord[discord.gg]
+- Github Link[github.com]
+
+Please take note, this is not intended to replace ALIVE, RCO Persist or anything else, those mods are more fully featured than this. The aim of this is to provide a simple Player persistence experience.
+
+
+---
+### Disclaimer: Please note, this is not intended to replace ALIVE, RCO Persist or anything else, those mods are more fully featured than this. The aim of this is to provide a simple Player persistence experience.
+---
 
 If you have any questions, or issues, please feel free to reach out on the Workshop.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/D1D8NFA51)
