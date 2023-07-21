@@ -3,6 +3,7 @@ if !(isServer) exitwith {};
 _player = _this select 0;
 _pID = _this select 1;
 _pName = name _player;
+_MID = owner _player;
 if (_pname == "__SERVER__") exitwith {};
 
 // Get Current Profile information
@@ -30,19 +31,21 @@ IF (count _spinfo == 0) then {
 		if (_pID == _playerArray select 0) exitWith { 
 			_Splayer  = _x; 
 			_spInfo deleteat _forEachIndex;
+			[_spinfo] call spp_fnc_updateNamespace;
 		};
 	} foreach _SPInfo;
 	
 	{	// Cleanup Duplicates.
 		if (_pID == _x select 0) then {
-			[2, format ["Duplicate entry found for %1, removing.", _pID]] call spp_fnc_log;
+			[1, format ["Duplicate entry found for %1, removing.", _pID]] call spp_fnc_log;
 			_SPInfo deleteat _foreachindex;
+			[_spinfo] call spp_fnc_updateNamespace;
 		};
 	} foreach _SPInfo;
 };
 
 if !(isNull _player) then {	
-	[2, format ["Gathering %1 Info.", _pName]] call spp_fnc_log;
+	[2, format ["Getting %1 info to save.", _pName]] call spp_fnc_log;
 	_pDMG = getAllHitPointsDamage _player;
 	_PLoad = getUnitLoadout _player;
 	_PPos = getpos _player;
@@ -50,5 +53,4 @@ if !(isNull _player) then {
 };
 
 _SPInfo pushback _SPlayer;
-profileNameSpace setvariable ["playerInformation", _SPInfo]; 
-saveProfileNamespace;
+[_spinfo] call spp_fnc_updateNamespace;

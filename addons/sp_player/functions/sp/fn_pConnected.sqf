@@ -17,9 +17,6 @@ waitUntil {
 };
 
 private _SPlayer = [];
-private _PLoad = [];
-private _PPos = [0,0,0];
-private _pDMG = [];
 private _arrayPos = 0;
 
 {  // find the users info.
@@ -42,20 +39,16 @@ if (count _SPlayer == 0) exitwith {
 
 // Assuming everything goes well now, and we've caught the other issues. Restore time.
 [2, format ["Restoring %1", name _player]] call spp_fnc_log;
-private _PID = _Splayer select 0;
-private _PLoad = _Splayer select 1;
-private _PPos = _SPLayer select 2;
-private _pDMG = _SPlayer select 3;
+private _PID = _Splayer 		param [0, _PID];
+private _PLoad = _Splayer 		param [1, []];
+private _PPos = _SPLayer 		param [2, []];
+private _pDMG = _SPlayer 		param [3, []];
 
 // We have to wait for the player to get in ect. This just holds them for a moment.
-waituntil {
-			sleep 10; 
-			alive _player;
-		};
-
 [_pDMG, _player, _MID] call spp_fnc_medicalCheck;
 
 [3, format ["Restoring position for %1", name _player]] call spp_fnc_log;
-_player setPos _PPos;
+_player setPos ([_PPos,0,10,5,0] call BIS_fnc_findSafePos);
+
 [3, format ["Restoring loadout for %1", name _player]] call spp_fnc_log;
 _player setUnitLoadout _PLoad;
