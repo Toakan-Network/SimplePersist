@@ -3,10 +3,11 @@ params ["_pid", "_pname", "_mid"];
 if !(isServer) exitwith {};
 if (_pname isequalto "__SERVER__") exitwith {};
 private _scriptName = 'spp_fnc_pconnected';
+private _namespaceName = "playerInformation";
 
 // Double check the ProfileNameSpace, it shouldn't happen but it may do if someone resets it mid game.
-private _SPInfo = profileNameSpace getVariable ["playerInformation", []]; 
-if (count _SPInfo == 0) exitwith {[1, "No data in Profilenamespace"] call spp_fnc_log};
+private _SPInfo = [_namespaceName] call spp_fnc_namespaceGet;
+if (count _SPInfo == 0) exitwith {[1, "No data in Profilenamespace", _scriptname] call spp_fnc_log};
 
 private _player = objNull;
 waitUntil {

@@ -1,5 +1,6 @@
 // playerDisconnect.sqf
 if !(isServer) exitwith {};
+private _namespaceName = "playerInformation";
 private _scriptname = "spp_fnc_pDConnected";
 private _player = _this select 0;
 private _pID = _this select 1;
@@ -7,7 +8,7 @@ private _pName = name _player;
 if (_pname == "__SERVER__") exitwith {};
 
 // Get Current Profile information
-private _SPInfo = profileNameSpace getVariable ["playerInformation", []]; 
+private _SPInfo = [_namespaceName] call spp_fnc_namespaceGet;
 // [ [123,[loadout],[pos]], [124,[loadout],[pos]] ]
 private _SPlayer = [];
 private _PLoad = [];
@@ -21,7 +22,7 @@ private _pDMG = [];
 	};
 } foreach _SPInfo;
 
-IF (count _spinfo == 0) then {	
+if (count _spinfo == 0) then {	
 	// Set player defaults on DC
 	_SPlayer = [_pID, _Pload, _ppos, _pDMG]; 
 } else {	// find the users info.
@@ -30,7 +31,7 @@ IF (count _spinfo == 0) then {
 		if (_pID == _playerArray select 0) exitWith { 
 			_Splayer  = _x; 
 			_spInfo deleteat _forEachIndex;
-			[_spinfo] call spp_fnc_updateNamespace;
+			[_namespaceName, _SPInfo] call spp_fnc_namespaceUpdate;
 		};
 	} foreach _SPInfo;
 	
@@ -38,7 +39,7 @@ IF (count _spinfo == 0) then {
 		if (_pID == _x select 0) then {
 			[1, format ["Duplicate entry found for %1, removing.", _pID]] call spp_fnc_log;
 			_SPInfo deleteat _foreachindex;
-			[_spinfo] call spp_fnc_updateNamespace;
+			[_namespaceName, _SPInfo] call spp_fnc_namespaceUpdate;
 		};
 	} foreach _SPInfo;
 };
@@ -52,5 +53,5 @@ if !(isNull _player) then {
 };
 
 _SPInfo pushback _SPlayer;
-[_spinfo] call spp_fnc_updateNamespace;
+[_namespaceName, _SPInfo] call spp_fnc_namespaceUpdate;
 [2, format["Player Disconnect Completed"]] call spp_fnc_log;
