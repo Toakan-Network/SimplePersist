@@ -1,8 +1,6 @@
+params ["_pid", "_pname", "_mid"];
 // PlayerConnected
 if !(isServer) exitwith {};
-_Pid = _this select 0; 
-_pname = _this select 1; 
-_MID = _this select 2;
 if (_pname isequalto "__SERVER__") exitwith {};
 private _scriptName = 'spp_fnc_pconnected';
 

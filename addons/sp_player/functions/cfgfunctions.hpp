@@ -19,11 +19,6 @@ class spp {
             };
     };
 
-    class log {
-        file = "sp_player\functions\log";
-        class log {};
-    };
-
     class sp_radio {
         file = "sp_player\functions\radios";
         class getradioAddons {};

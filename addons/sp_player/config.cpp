@@ -1,10 +1,10 @@
 #include "BIS_AddonInfo.hpp"
 class CfgPatches {
-    class TSPP {
+    class sp_player {
         units[]={};
         weapons[]={};
         requiredVersion=0.1;
-        requiredAddons[] = {};
+        requiredAddons[] = {"sp_general"};
     };
 };
 
