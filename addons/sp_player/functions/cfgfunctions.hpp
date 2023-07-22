@@ -37,11 +37,13 @@ class spp {
 
     class SimplePersist {
         file = "sp_player\functions\sp";
+        class getPlayerdata {};
         class getPlayerObj {};
-        class namespaceCheck {};
         class pConnected {};
         class pDConnected {};
         class setDefaults {};
-        class updateNamespace {};
+        class setplayerMedical {};
+        class setplayerPos {};
+        class setplayerloadout {};
     };
 };
