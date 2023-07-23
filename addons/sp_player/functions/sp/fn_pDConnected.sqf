@@ -1,31 +1,38 @@
 // playerDisconnect.sqf
 if !(isServer) exitwith {};
-private _namespaceName = "playerInformation";
 private _scriptname = "spp_fnc_pDConnected";
 private _player = _this select 0;
 private _pID = _this select 1;
 private _pName = name _player;
 if (_pname == "__SERVER__") exitwith {};
 
-// Get Current Profile information
-private _SPInfo = [_namespaceName] call spp_fnc_namespaceGet;
 // [ [123,[loadout],[pos]], [124,[loadout],[pos]] ]
 private _SPlayer = [];
 private _PLoad = [];
 private _PPos = [0,0,0];
 private _pDMG = [];
 
-{
-	if (count _x == 0) then {
-		// Quick blank check.
-		_SPInfo deleteat _foreachIndex;
-	};
-} foreach _SPInfo;
+if !(isNull _player) then {	
+	[2, format ["Getting %1 info to save.", _pName]] call spp_fnc_log;
+	_pDMG = getAllHitPointsDamage _player;
+	_PLoad = getUnitLoadout _player;
+	_PPos = getpos _player;
+	_Splayer = [_pid, _PLoad, _PPos, _pDMG];
+};
 
-if (count _spinfo == 0) then {	
-	// Set player defaults on DC
-	_SPlayer = [_pID, _Pload, _ppos, _pDMG]; 
-} else {	// find the users info.
+// Get Current Profile information
+if (call spp_fnc_legacyCheck) then {
+	// Legacy checks
+	private _namespaceName = "playerInformation"; 
+	private _SPinfo = [_namespaceName] call spp_fnc_namespaceget;
+
+	{	// Quick blank check.
+		if (count _x == 0) then {	
+			_SPInfo deleteat _foreachIndex;
+		};
+	} foreach _SPInfo;
+
+	// find the users info.
 	{
 		_playerArray = _x;
 		if (_pID == _playerArray select 0) exitWith { 
@@ -42,16 +49,18 @@ if (count _spinfo == 0) then {
 			[_namespaceName, _SPInfo] call spp_fnc_namespaceUpdate;
 		};
 	} foreach _SPInfo;
+
+	// _SPInfo pushback _SPlayer;
+	[_namespaceName, _SPInfo] call spp_fnc_namespaceUpdate;
+
+	// Use the new Save System
+	private _namespaceName = [_pid] call spp_fnc_getplayernamespace;
+	[_namespaceName, _splayer] call spp_fnc_namespaceUpdate;
+} else {
+	// New way, just overwrite profile on exit. 
+	// Prevents duplication and other issues being found.
+	private _namespaceName = [_pid] call spp_fnc_getplayernamespace;
+	[_namespaceName, _splayer] call spp_fnc_namespaceUpdate;
 };
 
-if !(isNull _player) then {	
-	[2, format ["Getting %1 info to save.", _pName]] call spp_fnc_log;
-	_pDMG = getAllHitPointsDamage _player;
-	_PLoad = getUnitLoadout _player;
-	_PPos = getpos _player;
-	_Splayer = [_pid, _PLoad, _PPos, _pDMG];
-};
-
-_SPInfo pushback _SPlayer;
-[_namespaceName, _SPInfo] call spp_fnc_namespaceUpdate;
-[2, format["Player Disconnect Completed"]] call spp_fnc_log;
+[2, format["Player Save Completed for %1", name _player]] call spp_fnc_log;

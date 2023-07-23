@@ -37,8 +37,11 @@ class spp {
 
     class SimplePersist {
         file = "sp_player\functions\sp";
+        class getLegacyData {};
         class getPlayerdata {};
+        class getPlayerNamespace {};
         class getPlayerObj {};
+        class legacyCheck {};
         class pConnected {};
         class pDConnected {};
         class setDefaults {};

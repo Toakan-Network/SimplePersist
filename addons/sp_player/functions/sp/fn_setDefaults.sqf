@@ -1,11 +1,11 @@
 params ["_player"];
-private _namespaceName = "playerInformation";
 private _scriptName = "spp_fnc_setDefaults";
 private _ppos = getpos _player;
 private _Pid = getplayerUID _player;
 private _pload = [];
 private _pDMG = [];
-
+//"playerInformation";
+private _namespaceName = [_pid] call spp_fnc_getplayernamespace;
 // Get the current PI Variable.
 private _SPInfo = [_namespaceName] call spp_fnc_namespaceGet;
 
