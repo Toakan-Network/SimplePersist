@@ -8,7 +8,7 @@ private _scriptName = 'spp_fnc_pconnected';
 private _player = objNull;
 waitUntil {
 	sleep 5;
-	_player = call spp_fnc_getPlayerObj;
+	_player = [_pid] call spp_fnc_getPlayerObj;
 	!isnull _player;
 };
 
