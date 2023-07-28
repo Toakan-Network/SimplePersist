@@ -8,16 +8,8 @@ if (_pname == "__SERVER__") exitwith {};
 
 // [ [123,[loadout],[pos]], [124,[loadout],[pos]] ]
 private _SPlayer = [];
-private _PLoad = [];
-private _PPos = [0,0,0];
-private _pDMG = [];
-
 if !(isNull _player) then {	
-	[2, format ["Getting %1 info to save.", _pName]] call spp_fnc_log;
-	_pDMG = getAllHitPointsDamage _player;
-	_PLoad = getUnitLoadout _player;
-	_PPos = getpos _player;
-	_Splayer = [_pid, _PLoad, _PPos, _pDMG];
+	_splayer = [_player] call spp_fnc_getPlayerData;
 };
 
 // Get Current Profile information
