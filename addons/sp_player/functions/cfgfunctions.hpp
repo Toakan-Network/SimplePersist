@@ -31,6 +31,12 @@ class spp {
         class setACRERadio {};
     };
 
+    class sp_p_survival {
+        file = "sp_player\functions\survival";
+        class getPlayerACERations {};
+        class setPlayerACERations {};
+    };
+
     class SP_Radio_TFAR {
 
     };
@@ -38,15 +44,17 @@ class spp {
     class SimplePersist {
         file = "sp_player\functions\sp";
         class getLegacyData {};
-        class getPlayerdata {};
+        class getPlayerData {};
         class getPlayerNamespace {};
         class getPlayerObj {};
         class legacyCheck {};
+        class loadPlayerdata {};
         class pConnected {};
         class pDConnected {};
         class setDefaults {};
+        class setPlayerData {};
+        class setplayerloadout {};
         class setplayerMedical {};
         class setplayerPos {};
-        class setplayerloadout {};
     };
 };
