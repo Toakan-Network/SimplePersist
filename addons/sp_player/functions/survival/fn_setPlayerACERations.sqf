@@ -1,5 +1,5 @@
 params ["_player", "_aceRations", "_MID"];
-private _RationArray = [];
+private _RationArray = [1,1];
 if (!(isClass (configFile >> "CfgPatches" >> "ace_field_rations"))) exitwith {
 	[1, format["ACE Field Rations are not detected"]] call spp_fnc_log;
 	_RationArray;
