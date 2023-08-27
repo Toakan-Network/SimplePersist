@@ -7,16 +7,18 @@ if (isnil "_variableName") exitwith {[1,"Namespace not passed to function", _fil
 [3, format ["Storage Check for: %1", _variableName], _filename] call spp_fnc_log;
 
 switch (true) do {
-	case (profileNamespace getvariable ["SPSavelocation", 0] == 1): {
+	case ((profileNamespace getvariable ["SPSavelocation", 0] == 1) && (_MissionGroup != "")): {
 		// Save to missionProfileNamespace.
 		[3, format ["Using MissionProfileNamespace storage for group: %1", _MissionGroup], _filename] call spp_fnc_log;
 		private _array = missionProfileNameSpace getVariable [_variableName, []]; 
 		if (count _array == 0) then {
-			// Setup the Namespace first.
-			[2, "MissionProfileNamespace not found, creating."] call spp_fnc_log;
-			missionProfileNameSpace setVariable [_variableName, _array]; 
-			saveMissionProfileNamespace;
+			// Variable Not found, creating.
+			[_variableName, _filename] call spp_fnc_mpnamespacecreate;
 		};
+	};
+
+	case ((profileNamespace getvariable ["SPSavelocation", 0] == 1) && (_MissionGroup == "")): {
+		// Invalid MissionGroup set, send warninig and save to ProfileNamespace instead.
 	};
 
 	default {

@@ -6,6 +6,7 @@ class spp {
         class namespaceCheck {};
         class namespaceUpdate {};
         class namespaceGet {};
+        class mpnamespaceCreate {};
     };
 
     class sp_generalInit {

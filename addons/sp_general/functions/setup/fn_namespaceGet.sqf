@@ -1,6 +1,6 @@
 // Setup uiNamespace
 params ["_variableName"];
-private _filename = "spp_fnc_namespaceGet";
+private _filename = "fn_namespaceGet";
 if (isnil "_variableName") exitwith {
 	[1,"Namespace not passed to function", _filename] call spp_fnc_log;
 };
@@ -17,12 +17,11 @@ switch (true) do {
 
 		if (count _array == 0) then {
 			// Setup the Namespace first.
-			[2, "MissionProfileNamespace is empty, creating."] call spp_fnc_log;
-			missionProfileNameSpace setVariable [_variableName, _array]; ; 
-			saveMissionProfileNamespace;
+			// Variable Not found, creating.
+			[_variableName, _filename] call spp_fnc_mpnamespacecreate;
 		}
 		else {
-			[2, "MissionProfileNamespace found, using."] call spp_fnc_log;
+			[2, format["MissionProfileNamespace found for: %1", _variableName]] call spp_fnc_log;
 		};
 	};
 
