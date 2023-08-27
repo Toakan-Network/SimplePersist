@@ -18,10 +18,10 @@ switch (true) do {
 		if (count _array == 0) then {
 			// Setup the Namespace first.
 			// Variable Not found, creating.
-			[_variableName, _filename] call spp_fnc_mpnamespacecreate;
+			[_variableName, _array, _filename] call spp_fnc_mpnamespacecreate;
 		}
 		else {
-			[2, format["MissionProfileNamespace found for: %1", _variableName]] call spp_fnc_log;
+			[2, format["MissionProfileNamespace data found for: %1", _variableName]] call spp_fnc_log;
 		};
 	};
 
@@ -30,9 +30,9 @@ switch (true) do {
 		[3, "Defaulting to ProfileNamespace storage",  _filename] call spp_fnc_log;
 		_array = profileNameSpace getVariable [_variableName, []]; 
 		if (count _array == 0) then {
-			// Setup the Namespace first.
-			profileNameSpace setVariable [_variableName, _array]; ; 
-			saveProfileNamespace;
+			[_variableName, _array, _filename] call spp_fnc_profilenamespacecreate;
+		} else {
+			[2, format["ProfileNamespace data found for: %1", _variableName]] call spp_fnc_log;
 		};
 	};
 };

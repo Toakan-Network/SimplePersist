@@ -1,4 +1,4 @@
-params ["_variableName", "_callingFNC"];
+params ["_variableName", "_array", "_callingFNC"];
 private _filename = "fn_MPNamespaceCreate";
 // MissionProfileNamespace Creation.
 [2, format["MissionProfileNamespace called by %1 does not contain: %2", _callingFNC, _variableName]] call spp_fnc_log;
