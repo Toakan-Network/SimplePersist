@@ -1,8 +1,7 @@
 params ["_variableName", "_array", "_callingFNC"];
 private _filename = "fn_MPNamespaceCreate";
-// MissionProfileNamespace Creation.
-[2, format["MissionProfileNamespace called by %1 does not contain: %2", _callingFNC, _variableName]] call spp_fnc_log;
 
+[3, format ["Saving missionProfileNamespace: %1, %2", _variableName, _array], _filename] call spp_fnc_log;
 // Set default empty array for Variable.
-missionProfileNameSpace setVariable [_variableName, []]; 
+missionProfileNamespace setVariable [_variableName, _array]; 
 saveMissionProfileNamespace;
