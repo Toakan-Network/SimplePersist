@@ -13,4 +13,4 @@ private _hunger = _aceRations select 1;
 _player setvariable ["acex_field_rations_thirst", _thirst];
 _player setvariable ["acex_field_rations_hunger", _hunger];
 
-[3, format["Restored ACE Rations for %1", _player], _filename] call spp_fnc_log;
+[3, format["Restored ACE Rations for %1", name _player], _filename] call spp_fnc_log;
