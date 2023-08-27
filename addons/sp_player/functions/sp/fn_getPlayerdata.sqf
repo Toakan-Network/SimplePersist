@@ -1,4 +1,5 @@
 params ["_player"];
+private _filename = "fn_getPlayerData";
 // Accepts: _player = Player Object
 private _pid = getplayerUID _player;
 private _pname = name _player;
@@ -14,5 +15,6 @@ _pDMG = getAllHitPointsDamage _player;
 _pACERations = [_player] call spp_fnc_getPlayerACERations;
 
 _Splayer = [_pid, _PLoad, _PPos, _pDMG, _pACERations];
+[3, format ["Player Data Storing: %1", _Splayer], _filename] call spp_fnc_log;
 
-_splayer;
+_Splayer;
