@@ -15,7 +15,7 @@ switch (true) do {
 		private _array = missionProfileNameSpace getVariable [_variableName, []]; 
 		if (count _array == 0) then {
 			// Variable Not found, creating.
-			[_variableName, _array, _filename] call spp_fnc_mpnamespacecreate;
+			[_variableName, _array, _filename] call spp_fnc_MPNamespaceSet;
 		};
 	};
 
@@ -24,7 +24,7 @@ switch (true) do {
 		[3, format["MissionGroup is empty, defaulting to ProfileNamespace Storage."], _filename] call spp_fnc_log;
 		private _array = profileNameSpace getVariable [_variableName, []]; 
 		if (count _array == 0) then {
-			[_variableName, _array, _filename] call spp_fnc_profilenamespacecreate;
+			[_variableName, _array, _filename] call spp_fnc_profilenamespaceSet;
 		};
 	};
 
@@ -33,7 +33,7 @@ switch (true) do {
 		[3, "Defaulting to ProfileNamespace storage", _filename] call spp_fnc_log;
 		private _array = profileNameSpace getVariable [_variableName, []]; 
 		if (count _array == 0) then {
-			[_variableName, _array, _filename] call spp_fnc_profilenamespacecreate;
+			[_variableName, _array, _filename] call spp_fnc_profilenamespaceSet;
 		};
 	};
 };

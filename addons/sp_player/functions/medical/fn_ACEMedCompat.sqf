@@ -1,4 +1,8 @@
 params ["_pDMG", "_player", "_MID"];
+if (_pDMG isEqualTo []) exitwith {
+	[2, "No Medical settings to restore"] call spp_fnc_log;
+};
+
 if (!(isClass (configFile >> "CfgPatches" >> "ace_medical_engine"))) exitwith {
 	[1, format["ACE Medical not detected"]] call spp_fnc_log;
 };

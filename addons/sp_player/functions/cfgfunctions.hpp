@@ -41,16 +41,23 @@ class spp {
 
     };
 
+    class legacy {
+        file = "sp_player\functions\legacy";
+        class getLegacyData {};
+        class legacyCheck {};
+    };
+
     class SimplePersist {
         file = "sp_player\functions\sp";
-        class getLegacyData {};
+        
         class getPlayerData {};
         class getPlayerNamespace {};
         class getPlayerObj {};
-        class legacyCheck {};
+
         class loadPlayerdata {};
         class pConnected {};
         class pDConnected {};
+        
         class setDefaults {};
         class setPlayerData {};
         class setplayerloadout {};

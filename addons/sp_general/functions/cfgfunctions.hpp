@@ -3,10 +3,11 @@ class spp {
 
     class setup {
         file = "sp_general\functions\setup";
+        class mpnamespaceSet {};
         class namespaceCheck {};
-        class namespaceUpdate {};
         class namespaceGet {};
-        class mpnamespaceCreate {};
+        class namespaceUpdate {};
+        class profilenamespaceSet {};
     };
 
     class sp_generalInit {
