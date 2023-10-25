@@ -28,7 +28,7 @@ private _msg = "SET Debug value: %1";
 [3, format[_msg, _aceRations], _filename] call spp_fnc_log;
 
 [_player, _pDMG, _MID] 	call spp_fnc_setplayermedical;
-[_player, _ppos, _MID] 	call spp_fnc_setplayerpos;
+[_player, _ppos, _MID] 	call spp_fnc_setObjPos;
 [_player, _pload, _MID]	call spp_fnc_setplayerLoadout;
 [_player, _aceRations, _MID] call spp_fnc_setPlayerACERations;
 
