@@ -62,6 +62,6 @@ class spp {
         class setPlayerData {};
         class setplayerloadout {};
         class setplayerMedical {};
-        class setplayerPos {};
+        class setObjPos {};
     };
 };
