@@ -21,4 +21,9 @@ class spp {
         file = "sp_general\functions\log";
         class log {};
     };
+
+    class players {
+        file = "sp_general\functions\players";
+        class machineplayerlookup {};
+    }
 };
