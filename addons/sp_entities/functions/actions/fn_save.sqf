@@ -1,7 +1,8 @@
 private _filename = 'spe_fnc_save';
 
 // Object Data
-private _objectType = '';		// What is it?
+private _objectType = "";		// What is it?
+private _objectGroup = "";		// Rebuild Groups
 private _objectpos = [0,0,0]; 	// Where is it?
 private _objectHealth = [];		// How damaged is it?
 private _objectContents = [];	// What inventory does it have.
@@ -27,11 +28,13 @@ _entityObjects = entities [_SPEExclusionArray, _SPEInclusionArray, _SPEIncludeCr
 	switch (true) do {
 		// If is a player, drop. Only want to save players during disconnect.
 		case (isplayer _x): {
-			[3, "Skipping player entity"] call spp_fnc_log;
+			[3, "Skipping player entity", _filename] call spp_fnc_log;
+			_dataUsed = 0;
 		 };
 
-		case (_x typeof 'Man'): {
+		case ( _x isKindOf "Man"): {
 			_objectType = typeof _x;
+			_objectGroup = group _x;
 			_objectContents = getUnitLoadout _x;
 			_objectpos = getpos _x;
 			_objectHealth = getAllHitPointsDamage _x;
@@ -40,8 +43,9 @@ _entityObjects = entities [_SPEExclusionArray, _SPEInclusionArray, _SPEIncludeCr
 			_dataUsed = 1;
 		};
 
-		case (_x typeof 'LandVehicle'): {
+		case ( _x isKindOf "LandVehicle"): {
 			_objectType = typeof _x;
+			_objectGroup = group vehicle _x;
 			_objectContents = [_x] call spe_fnc_getVehLoadout; 
 			_objectpos = getpos _x;
 			_objectHealth = getAllHitPointsDamage _x;
@@ -50,14 +54,18 @@ _entityObjects = entities [_SPEExclusionArray, _SPEInclusionArray, _SPEIncludeCr
 			_dataUsed = 1;
 		};
 
-		case (_x typeof 'Air'): {
-			[3, "Skipping Air entity"] call spp_fnc_log;
+		case ( _x isKindOf "Air"): {
+			[3, "Skipping Air entity", _filename] call spp_fnc_log;
+			_dataUsed = 0;
 		};
 
+		default {
+			_dataUsed = 0;
+		};
 	};
 
 	if (_dataUsed == 1) then {
-		_entityDataList pushBack [_objectType, _objectpos, _objectHealth, _objectContents];
+		_entityDataList pushBack [_objectType, _objectGroup, _objectpos, _objectHealth, _objectContents];
 	};
 
 } foreach _entityObjects;

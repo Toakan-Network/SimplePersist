@@ -1,8 +1,8 @@
 class spe { 
-    //Simple Persist Entities
+    // SimplePersist Entities
     tag = "spe";
 
-    class sp_generalInit {
+    class SPEinit {
         file = "sp_entities\functions\init";
         class initSPE {
             postInit = 1;
@@ -12,7 +12,6 @@ class spe {
     class setup {
         file = "sp_entities\functions\setup";
         class cleanup {};
-        class playerlookup {};
         class unitsetup {};
     };
 

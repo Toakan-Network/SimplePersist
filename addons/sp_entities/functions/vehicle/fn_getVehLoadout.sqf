@@ -1,4 +1,4 @@
-params ["_obj", objNull, [objNull]];
+params ["_obj"];
 // Pass in Object to check, ie car, returns the Containers and their contents.
 // Get all containers on object.
 private _objCont = everyContainer _obj;
