@@ -5,7 +5,7 @@ class spe {
     class SPEinit {
         file = "sp_entities\functions\init";
         class initSPE {
-            postInit = 1;
+            // postInit = 1;
         };
     };
 
