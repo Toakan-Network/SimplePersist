@@ -1,7 +1,7 @@
 params ["_pid", "_player"];
 private _scriptName = "spp_fnc_loadplayerdata";
 private _DefaultnamespaceName = "playerInformation";
-private _namespaceName = [_pid] call spp_fnc_getplayernamespace;
+private _namespaceName = [_pid, _player] call spp_fnc_getplayernamespace;
 
 [3, format["Using Gen2 Namespace: %1", _namespaceName],	_scriptName] call spp_fnc_log;
 _SPlayer = [_namespaceName] call spp_fnc_namespaceGet; 

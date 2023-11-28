@@ -5,7 +5,7 @@ private _Pid = getplayerUID _player;
 private _pload = [];
 private _pDMG = [];
 //"playerInformation";
-private _namespaceName = [_pid] call spp_fnc_getplayernamespace;
+private _namespaceName = [_pid, _player] call spp_fnc_getplayernamespace;
 // Get the current PI Variable.
 private _SPInfo = [_namespaceName] call spp_fnc_namespaceGet;
 

@@ -5,7 +5,7 @@ private _player = _this select 0;
 private _pID = _this select 1;
 private _pName = name _player;
 if (_pname == "__SERVER__") exitwith {};
-private _namespaceName = [_pid] call spp_fnc_getplayernamespace;
+private _namespaceName = [_pid, _player] call spp_fnc_getplayernamespace;
 
 // [ [123,[loadout],[pos]], [124,[loadout],[pos]] ]
 private _SPlayer = [];
