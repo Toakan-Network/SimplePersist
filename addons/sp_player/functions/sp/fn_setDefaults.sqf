@@ -1,6 +1,6 @@
 params ["_player"];
 private _scriptName = "fn_setDefaults";
-private _ppos = getpos _player;
+private _ppos = getposATL _player;
 private _Pid = getplayerUID _player;
 private _pload = [];
 private _pDMG = [];
