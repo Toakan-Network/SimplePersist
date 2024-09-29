@@ -11,7 +11,7 @@ private _roleid = _player getvariable ["SPRoleID", ""];
 [2, format ["Getting %1 info to save.", _pName]] call spp_fnc_log;
 
 _PLoad = getUnitLoadout _player;
-_PPos = getpos _player;
+_PPos = getposATL _player;
 _pDMG = getAllHitPointsDamage _player;
 _pACERations = [_player] call spp_fnc_getPlayerACERations;
 

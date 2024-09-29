@@ -36,7 +36,7 @@ _entityObjects = entities [_SPEExclusionArray, _SPEInclusionArray, _SPEIncludeCr
 			_objectType = typeof _x;
 			_objectGroup = group _x;
 			_objectContents = getUnitLoadout _x;
-			_objectpos = getpos _x;
+			_objectpos = getposATL _x;
 			_objectHealth = getAllHitPointsDamage _x;
 
 			[3, format["Found unit of type: %1, pos: %2, health: %3, contents: %4", _objectType, _objectpos, _objectHealth, _objectContents], _filename] call spp_fnc_log;
@@ -47,7 +47,7 @@ _entityObjects = entities [_SPEExclusionArray, _SPEInclusionArray, _SPEIncludeCr
 			_objectType = typeof _x;
 			_objectGroup = group vehicle _x;
 			_objectContents = [_x] call spe_fnc_getVehLoadout; 
-			_objectpos = getpos _x;
+			_objectpos = getposATL _x;
 			_objectHealth = getAllHitPointsDamage _x;
 
 			[3, format["Found Vehicle of type: %1, pos: %2, health: %3, contents: %4", _objectType, _objectpos, _objectHealth, _objectContents], _filename] call spp_fnc_log;
