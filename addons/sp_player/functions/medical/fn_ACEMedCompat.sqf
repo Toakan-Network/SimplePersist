@@ -1,4 +1,4 @@
-params ["_pDMG", "_player", "_MID"];
+params ["_pDMG", "_player", "_MID", ["_pACEMedicalState", []]];
 if (_pDMG isEqualTo []) exitwith {
 	[2, "No Medical settings to restore"] call spp_fnc_log;
 };
@@ -7,6 +7,14 @@ if (!(isClass (configFile >> "CfgPatches" >> "ace_medical_engine"))) exitwith {
 	[1, format["ACE Medical not detected"]] call spp_fnc_log;
 };
 private _filename = "fn_ACEMedCompat";
+
+// Check if we have ACE3 serialized medical state and use it if available
+if (!(_pACEMedicalState isEqualTo [])) exitwith {
+	[3, format["Restoring ACE medical state using deserializeState for %1", name _player], _filename] call spp_fnc_log;
+	// Use ACE3's deserializeState function to restore exact medical state
+	[_player, _pACEMedicalState] remoteExec ["ace_medical_fnc_deserializeState", _MID];
+	[3, format["ACE medical state restored for %1", name _player], _filename] call spp_fnc_log;
+};
 
 // set damage head
 private _dmg = _pdmg select 2 select 2;

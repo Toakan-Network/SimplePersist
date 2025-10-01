@@ -15,13 +15,21 @@ _PPos = getposATL _player;
 _pDMG = getAllHitPointsDamage _player;
 _pACERations = [_player] call spp_fnc_getPlayerACERations;
 
+// Get ACE Medical State if ACE is loaded
+_pACEMedicalState = [];
+if (isClass (configFile >> "CfgPatches" >> "ace_medical_engine")) then {
+	_pACEMedicalState = [_player] call ace_medical_fnc_serializeState;
+	[3, format["ACE Medical state serialized for %1", _pName], _filename] call spp_fnc_log;
+};
+
 _Splayer = [
 	_pid,
 	_PLoad,
 	_PPos,
 	_pDMG,
 	_pACERations,
-	_roleID
+	_roleID,
+	_pACEMedicalState
 ];
 
 {	// Debugging loop, skipped on loglevel.

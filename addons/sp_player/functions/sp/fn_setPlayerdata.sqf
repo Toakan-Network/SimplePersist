@@ -14,6 +14,7 @@ private _PPos = _SPLayer 		param [2, []];
 private _pDMG = _SPlayer 		param [3, []];
 private _aceRations = _splayer 	param [4, [0,0]];
 private _savedRoleID = _SPlayer param [5, ""];
+private _pACEMedicalState = _splayer param [6, []];
 
 private _saveRole = profileNamespace getvariable ["SPSaveRoles", 0];
 private _roleID = _player getvariable ["SPRoleID", ""];
@@ -33,7 +34,7 @@ if (isDamageAllowed _player) then {
 	_player allowDamage false;
 };
 
-[_player, _pDMG, _MID] 	call spp_fnc_setplayermedical;
+[_player, _pDMG, _MID, _pACEMedicalState] 	call spp_fnc_setplayermedical;
 [_player, _ppos, _MID] 	call spp_fnc_setObjPos;
 [_player, _pload, _MID]	call spp_fnc_setplayerLoadout;
 [_player, _aceRations, _MID] call spp_fnc_setPlayerACERations;

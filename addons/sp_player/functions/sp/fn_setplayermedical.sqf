@@ -1,4 +1,4 @@
-params ["_player", "_pDMG", "_MID"];
+params ["_player", "_pDMG", "_MID", ["_pACEMedicalState", []]];
 private _scriptName = "spp_fnc_setplayermedical";
 
 if (isnil "_player") exitwith {
@@ -10,4 +10,4 @@ if (isnil "_pdmg") exitwith {
 };
 
 // We have to wait for the player to get in ect. This just holds them for a moment.
-[_pDMG, _player, _MID] call spp_fnc_medicalCheck;
+[_pDMG, _player, _MID, _pACEMedicalState] call spp_fnc_medicalCheck;
