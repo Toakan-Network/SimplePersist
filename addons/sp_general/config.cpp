@@ -8,5 +8,5 @@ class CfgPatches {
 };
 
 class CfgFunctions {
-    #include "functions\CfgFunctions.hpp"
+    #include "functions\cfgfunctions.hpp"
 };

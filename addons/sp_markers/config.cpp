@@ -1,4 +1,3 @@
-#include "BIS_AddonInfo.hpp"
 class CfgPatches {
     class sp_markers {
         units[]={};
@@ -9,5 +8,5 @@ class CfgPatches {
 };
 
 class CfgFunctions {
-    #include "functions\CfgFunctions.hpp"
+    #include "functions\cfgfunctions.hpp"
 };
