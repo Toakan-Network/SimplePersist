@@ -1,0 +1,213 @@
+# ==================================
+# SQF/Arma 3 Modding .gitignore
+# ==================================
+
+# Build outputs and compiled files
+*.pbo
+*.bisign
+*.biprivatekey
+*.cpp.orig
+*.hpp.orig
+*.sqf.orig
+
+# Temporary and cache files
+*.tmp
+*.temp
+*.cache
+*.bak
+*.backup
+*~
+.~*
+
+# Arma 3 Tools
+*.depbo
+*.rapify
+*.p3d.tmp
+*.p3d.bak
+/tools/
+/arma3tools/
+
+# Editor and IDE files
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# JetBrains IDEs
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# Notepad++
+*.session
+
+# ==================================
+# Operating System Files
+# ==================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ==================================
+# Development and Build Tools
+# ==================================
+
+# Node.js (if using any JS tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# Python (if using any Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ==================================
+# Version Control
+# ==================================
+
+# Git
+*.orig
+*.rej
+
+# SVN
+.svn/
+
+# Mercurial
+.hg/
+.hgignore
+
+# ==================================
+# Arma 3 Specific
+# ==================================
+
+# Mission files that shouldn't be tracked
+*.save
+*.vars.Arma3Profile
+*.Arma3Profile
+
+# Server files
+*.rpt
+*.bidmp
+*.mdmp
+*.log
+arma3server.exe
+arma3server_x64.exe
+
+# Keys (be careful with these)
+# Uncomment if you don't want to track signature keys
+# *.bikey
+# keys/
+
+# ==================================
+# Custom Patterns
+# ==================================
+
+# Documentation builds
+docs/_build/
+site/
+
+# Test files
+test_results/
+coverage/
+
+# Local configuration files
+config.local.*
+settings.local.*
+*.local
+
+# Certificates and sensitive files
+*.pem
+*.key
+*.cert
+*.crt
+secrets.txt
+passwords.txt
+
+# Compressed files (unless specifically needed)
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.tgz
+
+# Large media files (consider Git LFS for these)
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.wav
+*.ogg
+*.paa
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tga
+*.dds
+
+# Custom exclusions - add your project-specific patterns below
+# ===================================================================
