@@ -8,12 +8,12 @@ Takes
 
 // Assuming everything goes well now, and we've caught the other issues. Restore time.
 [2, format ["Restoring %1", name _player]] call spp_fnc_log;
-private _PID = _Splayer 		param [0, _PID];
-private _PLoad = _Splayer 		param [1, []];
-private _PPos = _SPLayer 		param [2, []];
-private _pDMG = _SPlayer 		param [3, []];
-private _aceRations = _splayer 	param [4, [0,0]];
-private _savedRoleID = _SPlayer param [5, ""];
+private _PID = _splayer param [0, _PID];
+private _PLoad = _splayer param [1, []];
+private _PPos = _splayer param [2, []];
+private _pDMG = _splayer param [3, []];
+private _aceRations = _splayer param [4, [0,0]];
+private _savedRoleID = _splayer param [5, ""];
 private _pACEMedicalState = _splayer param [6, []];
 
 private _saveRole = profileNamespace getvariable ["SPSaveRoles", 0];
@@ -35,7 +35,7 @@ if (isDamageAllowed _player) then {
 };
 
 [_player, _pDMG, _MID, _pACEMedicalState] 	call spp_fnc_setplayermedical;
-[_player, _ppos, _MID] 	call spp_fnc_setObjPos;
+[_player, _ppos, _MID] call spp_fnc_setObjPos;
 [_player, _pload, _MID]	call spp_fnc_setplayerLoadout;
 [_player, _aceRations, _MID] call spp_fnc_setPlayerACERations;
 
