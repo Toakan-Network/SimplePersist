@@ -8,7 +8,7 @@ Takes
 
 // Assuming everything goes well now, and we've caught the other issues. Restore time.
 [2, format ["Restoring %1", name _player]] call spp_fnc_log;
-private _PID = _splayer param [0, _PID];
+private _PID = _splayer param [0, ""];
 private _PLoad = _splayer param [1, []];
 private _PPos = _splayer param [2, []];
 private _pDMG = _splayer param [3, []];
