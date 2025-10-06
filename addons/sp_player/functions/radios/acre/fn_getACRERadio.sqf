@@ -46,7 +46,7 @@ _newRadioList set [2, 1];
 		_radioChannel pushBack _currentChannel; //add channel to radioChannel
 		_radioVolume pushBack _currentVolume; //add volume to radioVolume
 		_radioSpatial pushBack _currentSpatial; //add spatial to radioSpatial
-		_newRadioList pushBack [_radioType, _radioChannel, _radioVolume, _radioSpatial, _pttList]
+		_newRadioList pushBack [_radioType, _radioChannel, _radioVolume, _radioSpatial, _pttList];
 	} forEach _radios;
 } forEach ["ACRE_PRC77", "ACRE_PRC117F", "ACRE_PRC148", "ACRE_PRC152", "ACRE_PRC343", "ACRE_SEM52SL", "ACRE_SEM70", "ACRE_BF888S"];
 

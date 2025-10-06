@@ -9,7 +9,7 @@ if ((isClass (configFile >> "CfgPatches" >> "acre_main"))) then {
 // TO DO - Add TFAR support?
 if (count _radioList == 0) exitwith {
     [3, format["Radio Mods not found."]] call spp_fnc_log;
-    _radioList
+    _radioList;
 };
 
 _radiolist;
