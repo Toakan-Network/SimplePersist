@@ -12,7 +12,7 @@ class spe {
     class setup {
         file = "sp_entities\functions\setup";
         class cleanup {};
-        class unitsetup {};
+        class unitSetup {};
     };
 
     class eh {
@@ -27,7 +27,7 @@ class spe {
     };
 
     class vehicle {
-        file = "sp_entities\functions\vehicle"
-        class getvehloadout {};
+        file = "sp_entities\functions\vehicle";
+        class getVehLoadout {};
     };
 };
