@@ -51,7 +51,7 @@ switch (_errLevel) do {
     };
 
     default {
-        _typex = format ["%1: [SPP] | Unknown Log Level Specified, please use 1= Errors, 2= Info, 3= Debug. Original error: %2",servertime, _errMsg]
+        _typex = format ["%1: [SPP] | Unknown Log Level Specified, please use 1= Errors, 2= Info, 3= Debug. Original error: %2",servertime, _errMsg];
     };
 };
 _typex remoteexec ['diag_log', 2];

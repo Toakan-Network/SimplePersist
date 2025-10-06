@@ -10,16 +10,16 @@ private _pttList = [];
 	// Set PTT assignment.
 	switch (true) do {
 		case (_radioPTT == 1): {
-			_pttList set [0, _radio]
+			_pttList set [0, _radio];
 		};
 		case (_radioPTT == 2): {
-			_pttList set [1, _radio]
+			_pttList set [1, _radio];
 		};
 		case (_radioPTT == 3): {
-			_pttList set [2, _radio]
+			_pttList set [2, _radio];
 		};
 		default {
-			_pttList set [0, _radio]
+			_pttList set [0, _radio];
 		};
 	};
 	// Set the radio values.

@@ -1,4 +1,4 @@
-private _filename = 'spe_fnc_save';
+private _filename = "spe_fnc_save";
 
 // Object Data
 private _objectType = "";		// What is it?
@@ -46,7 +46,7 @@ _entityObjects = entities [_SPEExclusionArray, _SPEInclusionArray, _SPEIncludeCr
 		case ( _x isKindOf "LandVehicle"): {
 			_objectType = typeof _x;
 			_objectGroup = group vehicle _x;
-			_objectContents = [_x] call spe_fnc_getVehLoadout; 
+			_objectContents = [_x] call spe_fnc_getVehLoadout;
 			_objectpos = getposATL _x;
 			_objectHealth = getAllHitPointsDamage _x;
 

@@ -2,7 +2,6 @@ params ["_player", "_pID", "_pname"];
 private _filename = "fn_getPlayerData";
 // Accepts: _player = Player Object
 
-private _pid = _this select 1;
 private _PLoad = [];
 private _PPos = [0,0,0];
 private _pDMG = [];
@@ -23,7 +22,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical_engine")) then {
 };
 
 _Splayer = [
-	_pid,
+	_pID,
 	_PLoad,
 	_PPos,
 	_pDMG,
