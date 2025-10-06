@@ -24,6 +24,6 @@ class spp {
 
     class players {
         file = "sp_general\functions\players";
-        class machineplayerlookup {};
+        class machinePlayerLookup {};
     }
 };

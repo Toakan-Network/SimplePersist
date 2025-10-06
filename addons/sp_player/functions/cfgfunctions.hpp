@@ -21,8 +21,8 @@ class spp {
 
     class sp_radio {
         file = "sp_player\functions\radios";
-        class getradioAddons {};
-        class setradioAddons {};
+        class getRadioAddons {};
+        class setRadioAddons {};
     };
 
     class sp_radio_acre {
@@ -60,8 +60,8 @@ class spp {
         
         class setDefaults {};
         class setPlayerData {};
-        class setplayerloadout {};
-        class setplayerMedical {};
+        class setPlayerLoadout {};
+        class setPlayerMedical {};
         class setObjPos {};
     };
 };
