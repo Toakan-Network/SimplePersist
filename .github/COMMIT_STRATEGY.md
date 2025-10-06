@@ -115,30 +115,53 @@ Before each commit, ensure:
 
 ## Branch Strategy
 
-- **main**: Production-ready code
+- **main**: Production-ready code for stable releases
 - **develop**: Development integration branch
-- **feature/***: Individual feature development
-- **hotfix/***: Critical bug fixes
+- **feature/***: Individual feature development (e.g., feature/ace-medical-integration)
+- **hotfix/***: Critical bug fixes for production
 - **docs/***: Documentation updates
 
 ## Release Process
 
 1. Complete feature development in feature branch
 2. Merge to develop branch
-3. Test thoroughly in develop
+3. Test thoroughly in Arma 3 development environment
 4. Create release branch from develop
 5. Final testing and version updates in release branch
 6. Merge release to main
 7. Tag release with semantic version
-8. Deploy from main branch
+8. Create PBO files and publish release
 
 ## Version Tagging
 
 ```bash
 # Create version tags for releases
-git tag -a v1.0.0 -m "Release version 1.0.0 - Initial production release"
-git tag -a v1.1.0 -m "Release version 1.1.0 - Add custom properties support"
+git tag -a v1.0.0 -m "Release version 1.0.0 - Initial SimplePersist release"
+git tag -a v1.1.0 -m "Release version 1.1.0 - Add ACE medical serialization support"
+git tag -a v1.2.0 -m "Release version 1.2.0 - Enhanced entity persistence and TFAR support"
 git push origin --tags
 ```
 
-This strategy ensures clean history and traceable changes for the Office diagnostic tool.
+## Module-Specific Guidelines
+
+### SP_Player Module
+- Focus on player data persistence, medical states, loadouts
+- Test with ACE medical, ACRE radios, survival features
+- Ensure compatibility with role-based saving
+
+### SP_Entities Module  
+- Handle vehicle and unit persistence
+- Test with various vehicle types and equipment
+- Verify proper cleanup and restoration
+
+### SP_General Module
+- Core namespace and logging functionality
+- Ensure backward compatibility with existing saves
+- Test profileNamespace and missionProfileNamespace storage
+
+### SP_Markers Module
+- Player-created marker persistence
+- Test marker creation, deletion, and restoration
+- Verify proper namespace management
+
+This strategy ensures clean history and traceable changes for the SimplePersist Arma 3 mod.
