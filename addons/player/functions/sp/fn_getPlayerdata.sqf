@@ -5,12 +5,12 @@ private _filename = "fn_getPlayerData";
 private _PLoad = [];
 private _PPos = [0,0,0];
 private _pDMG = [];
-private _saveRole = profileNamespace getvariable ["SPSaveRoles", 0];
-private _roleid = _player getvariable ["SPRoleID", ""];
+private _saveRole = profileNamespace getVariable ["SPSaveRoles", 0];
+private _roleid = _player getVariable ["SPRoleID", ""];
 [2, format ["Getting %1 info to save.", _pName]] call spp_fnc_log;
 
 _PLoad = getUnitLoadout _player;
-_PPos = getposATL _player;
+_PPos = getPosATL _player;
 _pDMG = getAllHitPointsDamage _player;
 _pACERations = [_player] call spp_fnc_getPlayerACERations;
 
@@ -34,7 +34,7 @@ _Splayer = [
 {	// Debugging loop, skipped on loglevel.
 	private _msg = "GET Debug value: %1";
 	[3, format[_msg, _x], _filename] call spp_fnc_log;
-} foreach _splayer;
+} forEach _splayer;
 
 [3, format ["Player Data Storing: %1", _Splayer], _filename] call spp_fnc_log;
 

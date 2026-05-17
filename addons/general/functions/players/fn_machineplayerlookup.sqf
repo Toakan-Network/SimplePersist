@@ -8,15 +8,15 @@ private _playerUID = 0;
 for "_i" from 0 to (count _allUsers - 1) do
 {
 	private _player = _allUsers select _i;
-	if (getplayerid _player == _networkId) exitwith {
-		_playerUID = getplayerUID _player;
+	if (getPlayerUID _player == _networkId) exitWith {
+		_playerUID = getPlayerUID _player;
 		_userFound = 1;
 		[2,	format["SPE %1 Logged in as Admin", name _player]] call spp_fnc_log;
 	};
 };
 
 // Exit if values are in expected range.
-if ((_userFound isEqualTo 0) || (_playerUID isEqualTo 0)) exitwith {
+if ((_userFound isEqualTo 0) || (_playerUID isEqualTo 0)) exitWith {
 	[2,	format["Error finding player based on %1", _networkId]] call spp_fnc_log;
 };
 

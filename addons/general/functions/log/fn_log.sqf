@@ -2,7 +2,7 @@
 // Param 1 = Error Level (Error, Info, Debug)
 // Param 2 = Log Message
 // Param 3 = Invoking File
-// 
+//
 // "Default Error" execvm "log.sqf";
 // [1,"Error Logging","log.sqf"] execvm "log.sqf";
 // [2,"Info Logging"] execvm "log.sqf";
@@ -14,7 +14,7 @@
 private _errLevel = '';
 private _errMsg = '';
 private _errFile = '';
-private _logLevel = missionNamespace getvariable ["SPLogLevel", 2];
+private _logLevel = missionNamespace getVariable ["SPLogLevel", 2];
 
 if(_this isEqualType []) then
 {
@@ -33,25 +33,25 @@ if (isNil "_errLevel") then {
     _errLevel = 1;
 };
 
-if (_errLevel > _logLevel) exitwith {}; // for param use
+if (_errLevel > _logLevel) exitWith {}; // for param use
 
 // Sets up the actual log event.
 _typex = "";
 switch (_errLevel) do {
     case 1: {
-        _typex = format ["%1: [SPP] | ERROR | %2 | %3",servertime, _errFile,_errMsg];
+        _typex = format ["%1: [SPP] | ERROR | %2 | %3",serverTime, _errFile,_errMsg];
     };
 
     case 2: {
-        _typex = format ["%1: [SPP] | INFO | %2",servertime, _errMsg];
+        _typex = format ["%1: [SPP] | INFO | %2",serverTime, _errMsg];
     };
 
     case 3: {
-        _typex = format ["%1: [SPP] | DEBUG | %2 | %3",servertime, _errFile,_errMsg];
+        _typex = format ["%1: [SPP] | DEBUG | %2 | %3",serverTime, _errFile,_errMsg];
     };
 
     default {
-        _typex = format ["%1: [SPP] | Unknown Log Level Specified, please use 1= Errors, 2= Info, 3= Debug. Original error: %2",servertime, _errMsg];
+        _typex = format ["%1: [SPP] | Unknown Log Level Specified, please use 1= Errors, 2= Info, 3= Debug. Original error: %2",serverTime, _errMsg];
     };
 };
-_typex remoteexec ['diag_log', 2];
+_typex remoteExec ['diag_log', 2];

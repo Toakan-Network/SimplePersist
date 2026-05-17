@@ -1,14 +1,14 @@
 // playerDisconnect.sqf
-if !(isServer) exitwith {};
+if !(isServer) exitWith {};
 private _filename = "fn_pDConnected";
 params ["_player", "_pID"];
 private _pName = name _player;
-if (_pName == "__SERVER__") exitwith {};
+if (_pName == "__SERVER__") exitWith {};
 private _namespaceName = [_pID, _player] call spp_fnc_getplayernamespace;
 
 // [ [123,[loadout],[pos]], [124,[loadout],[pos]] ]
 private _sPlayer = [];
-if !(isNull _player) then {	
+if !(isNull _player) then {
 	_sPlayer = [_player, _pID, _pName] call spp_fnc_getPlayerData;
 };
 

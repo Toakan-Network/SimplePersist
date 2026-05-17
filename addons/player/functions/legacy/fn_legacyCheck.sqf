@@ -6,5 +6,5 @@ private _SPInfo = [_legacyNamespace] call spp_fnc_namespaceGet;
 
 [3, "Checking for Legacy Namespace", _filename] call spp_fnc_log;
 
-if (count _spinfo == 0) exitwith {false};
+if (count _spinfo == 0) exitWith {false};
 true;

@@ -1,7 +1,7 @@
 params ["_player", "_aceRations", "_MID"];
 private _filename = "fn_setPlayerACERations";
 private _RationArray = [1,1];
-if (!(isClass (configFile >> "CfgPatches" >> "ace_field_rations"))) exitwith {
+if (!(isClass (configFile >> "CfgPatches" >> "ace_field_rations"))) exitWith {
 	[1, format["ACE Field Rations are not detected"]] call spp_fnc_log;
 	_RationArray;
 };
@@ -10,7 +10,7 @@ if (!(isClass (configFile >> "CfgPatches" >> "ace_field_rations"))) exitwith {
 private _thirst = _aceRations select 0;
 private _hunger = _aceRations select 1;
 
-_player setvariable ["acex_field_rations_thirst", _thirst];
-_player setvariable ["acex_field_rations_hunger", _hunger];
+_player setVariable ["acex_field_rations_thirst", _thirst];
+_player setVariable ["acex_field_rations_hunger", _hunger];
 
 [3, format["Restored ACE Rations for %1", name _player], _filename] call spp_fnc_log;

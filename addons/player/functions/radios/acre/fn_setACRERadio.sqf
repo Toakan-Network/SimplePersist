@@ -26,13 +26,13 @@ private _pttList = [];
 	[_radio, _radioChannel] call acre_api_fnc_setRadioChannel;
 	[_radio, _radioVolume] call acre_api_fnc_setRadioVolume;
 	[_radio, _radioSpatial] call acre_api_fnc_setRadioSpatial;
-} foreach _radioList;
+} forEach _radioList;
 
 [3, format ["Player %1 PTT Settings: %2", _player, _pttList]] call spp_fnc_log;
 // Set the radio PTT settings.
 private _ptt1 = _pttList param[0, 0];
-private _ptt2 = _pttList param[1, 1]; 
-private _ptt3 = _pttList param[2, 2]; 
-_pttNewRadioList = [ [_ptt1, _ptt2, _ptt3] ] call acre_api_fnc_setMultiPushToTalkAssignment; 
+private _ptt2 = _pttList param[1, 1];
+private _ptt3 = _pttList param[2, 2];
+_pttNewRadioList = [ [_ptt1, _ptt2, _ptt3] ] call acre_api_fnc_setMultiPushToTalkAssignment;
 
-["Your ACRE Settings have been restored"] remoteexec ["systemchat", _MID];
+["Your ACRE Settings have been restored"] remoteExec ["systemchat", _MID];

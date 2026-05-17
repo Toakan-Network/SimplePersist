@@ -1,15 +1,15 @@
 params ["_player", "_pload", "_MID"];
 private _scriptName = "spp_fnc_setplayerLoadout";
 
-if (isnil "_player") exitwith {
+if (isNil "_player") exitWith {
 	[1, format ["No player information provided."], _scriptName] call spp_fnc_log;
 };
 
-if (isnil "_pload") exitwith {
+if (isNil "_pload") exitWith {
 	[3, format ["Invalid Loadout Data for %1", name _player], _scriptName] call spp_fnc_log;
 };
 
-if (_pload isequalto []) exitwith {
+if (_pload isEqualTo []) exitWith {
 	[3, format ["No Loadout Data provided for %1", name _player], _scriptName] call spp_fnc_log;
 };
 

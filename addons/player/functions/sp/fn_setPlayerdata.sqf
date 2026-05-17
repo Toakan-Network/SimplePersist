@@ -1,7 +1,7 @@
 params["_player", "_splayer", "_MID"];
 private _filename = "fn_setPlayerData";
 /*
-Takes 
+Takes
 - _player = Player object
 - _splayer = Player Restore Data
 */
@@ -16,15 +16,15 @@ private _aceRations = _splayer param [4, [0,0]];
 private _savedRoleID = _splayer param [5, ""];
 private _pACEMedicalState = _splayer param [6, []];
 
-private _saveRole = profileNamespace getvariable ["SPSaveRoles", 0];
-private _roleID = _player getvariable ["SPRoleID", ""];
+private _saveRole = profileNamespace getVariable ["SPSaveRoles", 0];
+private _roleID = _player getVariable ["SPRoleID", ""];
 
 private _msg = "SET Debug value: %1";
-{	// Debugging loop, skipped on loglevel.	
+{	// Debugging loop, skipped on loglevel.
 	[3, format[_msg, _x], _filename] call spp_fnc_log;
-} foreach _splayer;
+} forEach _splayer;
 
-if ((_saveRole isEqualTo 1) && !(_roleID isEqualTo _savedRoleID)) exitwith {
+if ((_saveRole isEqualTo 1) && (_roleID isNotEqualTo _savedRoleID)) exitWith {
 	[1, format ["SP loaded incorrect player data, not loading for: %1, %2, %3", name _player, _roleid, _savedRoleID]] call spp_fnc_log;
 };
 

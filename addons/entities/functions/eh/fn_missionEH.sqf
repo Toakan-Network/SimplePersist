@@ -3,13 +3,13 @@
 
 addMissionEventHandler ["OnUserAdminStateChanged", {
 	params ["_networkId", "_loggedIn", "_votedIn"];
-	if (!_loggedIn) exitwith {
+	if (!_loggedIn) exitWith {
 		[_networkId] spawn {
 			params ["_networkId"];
 			[_networkId] call spe_fnc_cleanup;
 		};
 	};
-	if (_loggedIn) exitwith {
+	if (_loggedIn) exitWith {
 		// Throw it in a delayed script.
 		[_networkId] spawn {
 			params ["_networkId"];

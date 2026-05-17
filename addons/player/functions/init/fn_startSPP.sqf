@@ -1,7 +1,7 @@
 // Make sure to run when we're in a mission only.
 if (allDisplays isEqualTo [findDisplay 0]) exitWith {};
 // Only run on the server.
-if !(isServer) exitwith {};
+if !(isServer) exitWith {};
 [2, format ["SimplePersist Player Module Loading."]] call spp_fnc_log;
 
 call spp_fnc_missionEH;

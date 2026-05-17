@@ -1,5 +1,5 @@
 params ["_SPMarkers"];
-if !(count _SPMarkers == 0) exitwith {
-	profileNameSpace setVariable ["SPMarkerInformation", _SPMarkers]; 
+if ((count _SPMarkers) isNotEqualTo 0) exitWith {
+	profileNamespace setVariable ["SPMarkerInformation", _SPMarkers];
 	saveProfileNamespace;
 };

@@ -1,5 +1,5 @@
 // PlayerConnected
 params ["_pid", "_pname", "_mid"];
-if !(isServer) exitwith {};
-if (_pname isequalto "__SERVER__") exitwith {};
+if !(isServer) exitWith {};
+if (_pname isEqualTo "__SERVER__") exitWith {};
 private _scriptName = 'spp_fnc_playerLoadMarkers]';

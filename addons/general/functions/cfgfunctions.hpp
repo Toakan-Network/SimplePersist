@@ -7,7 +7,7 @@ class spp {
         class namespaceCheck {};
         class namespaceGet {};
         class namespaceUpdate {};
-        class profilenamespaceSet {};
+        class profileNamespaceSet {};
     };
 
     class sp_generalInit {

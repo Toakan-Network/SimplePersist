@@ -1,7 +1,7 @@
 // Setup uiNamespace
-private _SPMarkers = profileNameSpace getVariable ["SPMarkerInformation", []]; 
+private _SPMarkers = profileNamespace getVariable ["SPMarkerInformation", []];
 if (count _SPMarkers == 0) then {
 	// Setup the Namespace first.
-	profileNameSpace setVariable ["SPMarkerInformation", []]; 
+	profileNamespace setVariable ["SPMarkerInformation", []];
 	saveProfileNamespace;
 };

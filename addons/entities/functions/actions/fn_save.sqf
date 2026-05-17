@@ -12,10 +12,10 @@ private _entityDataList = [];
 
 // We only care about "alive" objects, ie not dead / destroyed.
 // Private options which can be overwritten in initServer.sqf file.
-private _SPEExclusionArray = profilenamespace getvariable ['SPEExclusionArray', []];
-private _SPEInclusionArray = profilenamespace getvariable ['SPEInclusionArray', []];
-private _SPEIncludeCrew = 	profilenamespace getvariable ['SPEIncludeCrew', true];
-private _SPEExcludeDead = 	profilenamespace getVariable ['SPEExcludeDead', true];
+private _SPEExclusionArray = profileNamespace getVariable ['SPEExclusionArray', []];
+private _SPEInclusionArray = profileNamespace getVariable ['SPEInclusionArray', []];
+private _SPEIncludeCrew = 	profileNamespace getVariable ['SPEIncludeCrew', true];
+private _SPEExcludeDead = 	profileNamespace getVariable ['SPEExcludeDead', true];
 
 // IncludeTypes, ExcludeTypes, IncludeCrew, ExcludeDead
 _entityObjects = entities [_SPEExclusionArray, _SPEInclusionArray, _SPEIncludeCrew, _SPEExcludeDead];
@@ -27,16 +27,16 @@ _entityObjects = entities [_SPEExclusionArray, _SPEInclusionArray, _SPEIncludeCr
 
 	switch (true) do {
 		// If is a player, drop. Only want to save players during disconnect.
-		case (isplayer _x): {
+		case (isPlayer _x): {
 			[3, "Skipping player entity", _filename] call spp_fnc_log;
 			_dataUsed = 0;
 		 };
 
 		case ( _x isKindOf "Man"): {
-			_objectType = typeof _x;
+			_objectType = typeOf _x;
 			_objectGroup = group _x;
 			_objectContents = getUnitLoadout _x;
-			_objectpos = getposATL _x;
+			_objectpos = getPosATL _x;
 			_objectHealth = getAllHitPointsDamage _x;
 
 			[3, format["Found unit of type: %1, pos: %2, health: %3, contents: %4", _objectType, _objectpos, _objectHealth, _objectContents], _filename] call spp_fnc_log;
@@ -44,10 +44,10 @@ _entityObjects = entities [_SPEExclusionArray, _SPEInclusionArray, _SPEIncludeCr
 		};
 
 		case ( _x isKindOf "LandVehicle"): {
-			_objectType = typeof _x;
+			_objectType = typeOf _x;
 			_objectGroup = group vehicle _x;
 			_objectContents = [_x] call spe_fnc_getVehLoadout;
-			_objectpos = getposATL _x;
+			_objectpos = getPosATL _x;
 			_objectHealth = getAllHitPointsDamage _x;
 
 			[3, format["Found Vehicle of type: %1, pos: %2, health: %3, contents: %4", _objectType, _objectpos, _objectHealth, _objectContents], _filename] call spp_fnc_log;
@@ -68,6 +68,6 @@ _entityObjects = entities [_SPEExclusionArray, _SPEInclusionArray, _SPEIncludeCr
 		_entityDataList pushBack [_objectType, _objectGroup, _objectpos, _objectHealth, _objectContents];
 	};
 
-} foreach _entityObjects;
+} forEach _entityObjects;
 
 _entityObjects;
