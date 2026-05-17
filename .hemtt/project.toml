@@ -1,15 +1,11 @@
-name   = "SimplePersist"
+name = "SimplePersist"
 author = "Tad"
 mainprefix = "tad"
 prefix = "sp"
 
 [files]
-include = [
-    "LICENSE",
-]
-exclude = [
-    "icons/*.psd",
-]
+include = ["LICENSE"]
+exclude = ["icons/*.psd"]
 
 [version]
 major = 0
@@ -18,7 +14,7 @@ patch = 0
 git_hash = 0
 
 [hemtt.release]
-sign    = true
+sign = true
 archive = false
 
 [hemtt.dev]
