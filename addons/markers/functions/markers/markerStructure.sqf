@@ -1,14 +1,13 @@
-// Structure of the SPMarkers Array [];
-
-_SPMarkers =[
-markerPos _markerPos,
-markerType _markerType,
-markerShape _markerShape,
-markerPolyline _markerPoly,
-markerColor _markerColour,
-markerDir _markerDir,
-markerAlpha _markerAlpha,
-markerText _markerText 
-];
-
+// Structure of the SPMarkers array:
+// [
+//     markerPos _marker,
+//     markerType _marker,
+//     markerShape _marker,
+//     markerPolyline _marker,
+//     markerColor _marker,
+//     markerDir _marker,
+//     markerAlpha _marker,
+//     markerText _marker
+// ];
+//
 // Marker side?

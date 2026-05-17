@@ -1,8 +1,8 @@
 // Setup uiNamespace
 params ["_variableName"];
+private _filename = "spp_fnc_namespacecheck";
 if (isNil "_variableName") exitWith {[1,"Namespace not passed to function", _filename] call spp_fnc_log;};
 
-private _filename = "spp_fnc_namespacecheck";
 private _MissionGroup = getText (missionConfigFile >> "missionGroup");
 private _array = [];
 
