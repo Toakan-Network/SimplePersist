@@ -2,7 +2,7 @@ class CfgPatches {
     class sp_markers {
         units[]={};
         weapons[]={};
-        requiredVersion=0.1;
+        requiredVersion=2.10;
         requiredAddons[] = {"sp_general"};
     };
 };

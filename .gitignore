@@ -9,6 +9,11 @@
 *.cpp.orig
 *.hpp.orig
 *.sqf.orig
+.hemttout/
+hemtt
+hemtt.exe
+.hemttprivatekey
+releases/
 
 # Temporary and cache files
 *.tmp
@@ -30,6 +35,8 @@
 # Editor and IDE files
 # Visual Studio Code
 .vscode/
+!.vscode/
+!.vscode/settings.json
 *.code-workspace
 
 # Visual Studio
