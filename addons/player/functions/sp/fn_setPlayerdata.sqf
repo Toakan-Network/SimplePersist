@@ -14,7 +14,7 @@ private _PPos = _splayer param [2, []];
 private _pDMG = _splayer param [3, []];
 private _aceRations = _splayer param [4, [0,0]];
 private _savedRoleID = _splayer param [5, ""];
-private _pACEMedicalState = _splayer param [6, []];
+private _pACEMedicalState = _splayer param [6, ""];
 
 private _saveRole = profileNamespace getVariable ["SPSaveRoles", 0];
 private _roleID = _player getVariable ["SPRoleID", ""];
