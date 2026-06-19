@@ -6,6 +6,11 @@
 *.pbo
 *.bisign
 *.biprivatekey
+.hemttout
+hemtt
+hemtt.exe
+.hemttprivatekey
+releases
 *.cpp.orig
 *.hpp.orig
 *.sqf.orig
@@ -166,6 +171,7 @@ arma3server_x64.exe
 # ==================================
 
 # Documentation builds
+docs
 docs/_build/
 site/
 
