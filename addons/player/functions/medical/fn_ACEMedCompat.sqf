@@ -7,7 +7,7 @@ if (!(isClass (configFile >> "CfgPatches" >> "ace_medical"))) exitWith {
 
 if ((_pACEMedicalState isEqualType "") && {_pACEMedicalState isNotEqualTo ""}) exitWith {
 	[3, format["Restoring ACE medical state using deserializeState for %1", name _player], _filename] call spp_fnc_log;
-	[_player, _pACEMedicalState] remoteExecCall ["ace_medical_fnc_deserializeState", _player];
+	[_player, _pACEMedicalState] remoteExecCall ["ace_medical_fnc_deserializeState", _MID];
 	[3, format["ACE medical state restored for %1", name _player], _filename] call spp_fnc_log;
 };
 
